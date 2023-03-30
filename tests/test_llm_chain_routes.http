@@ -1,0 +1,28 @@
+### Get llm_chain
+GET http://localhost:5000/llm_chain
+
+### Post llm_chain
+POST http://localhost:5000/llm_chain
+Content-Type: application/json
+
+{
+  "domain": "Artificial Intelligence",
+  "protocol": "GPT-4",
+  "prompt": "Explain the basics of machine learning."
+}
+
+### Get new_template
+GET http://localhost:5000/llm_chain/new_template
+
+### Post new_template
+POST http://localhost:5000/llm_chain/new_template
+Content-Type: application/json
+
+{
+  "template": "You are an expert in {field}. Your protocol: {protocol}. {prompt}",
+  "variables": [
+    "field",
+    "protocol",
+    "prompt"
+  ]
+}

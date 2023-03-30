@@ -1,0 +1,45 @@
+### Test Authentication: Token Generation - Valid Credentials
+POST http://localhost:5000/token HTTP/1.1
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "testpassword"
+}
+
+###
+
+### Test Authentication: Token Generation - Invalid Credentials
+POST http://localhost:5000/token HTTP/1.1
+Content-Type: application/json
+
+{
+  "username": "testuser",
+  "password": "wrongpassword"
+}
+
+###
+
+### Test Get Current User - Valid Token
+GET http://localhost:5000/users/me HTTP/1.1
+Authorization: Bearer {valid_jwt_token}
+
+###
+
+### Test Get Current User - Invalid Token
+GET http://localhost:5000/users/me HTTP/1.1
+Authorization: Bearer {invalid_jwt_token}
+
+###
+
+### Test Secure Data Access - Valid Token
+GET http://localhost:5000/secure_data HTTP/1.1
+Authorization: Bearer {valid_jwt_token}
+
+###
+
+### Test Secure Data Access - Invalid Token
+GET http://localhost:5000/secure_data HTTP/1.1
+Authorization: Bearer {invalid_jwt_token}
+
+###

@@ -1,0 +1,53 @@
+### Get conversation
+GET http://localhost:5000/conversation
+
+### Post conversation
+POST http://localhost:5000/conversation
+Content-Type: application/json
+
+{
+  "message": "What is machine learning?"
+}
+
+### New conversation
+GET http://localhost:5000/new_conversation
+
+### Save conversation
+POST http://localhost:5000/save_conversation
+Content-Type: application/json
+
+{
+  "id": "1234"
+}
+
+### Load conversations
+GET http://localhost:5000/load_conversations
+
+### Load conversation by index
+GET http://localhost:5000/load_conversation_by_index/0
+
+### Load conversation by id
+GET http://localhost:5000/load_conversation_by_id/1234
+
+### Get chat models
+GET http://localhost:5000/chat_models
+
+### Get text models
+GET http://localhost:5000/text_models
+
+### Get code models
+GET http://localhost:5000/code_models
+
+### Get document models
+GET http://localhost:5000/document_models
+
+### Get all models
+GET http://localhost:5000/models
+
+### Test tiktoken
+POST http://localhost:5000/tiktoken
+Content-Type: application/json
+
+{
+  "text": "This is a sample text for testing tiktoken."
+}
