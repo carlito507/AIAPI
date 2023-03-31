@@ -1,8 +1,10 @@
-from fastapi import FastAPI, APIRouter, Request
+from fastapi import APIRouter, Request
 from pydantic import BaseModel
-from utils import template, get_variables, chain, llm, get_prompt, new_template, new_chain
-from models.tokenizer import Tokenizer
-from langchain import PromptTemplate
+from app.utils.utils import get_variables, get_prompt, new_template, new_chain
+
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 class NewTemplateInput(BaseModel):

@@ -1,7 +1,7 @@
 from langchain import PromptTemplate
 from langchain.llms import OpenAI
 from langchain.chains import LLMChain
-from config import api_key
+from app.core.config import api_key
 
 
 template = """

@@ -9,13 +9,15 @@ class UserIn(BaseModel):
 
 class UserOut(BaseModel):
     username: str
+    email: EmailStr
+    status: str
 
 
 class UserCreate(BaseModel):
     username: str
     password: str
     email: EmailStr
-    status: bool
+    status: str
 
 
 class UserUpdate(BaseModel):

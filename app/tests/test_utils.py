@@ -1,5 +1,5 @@
 import pytest
-from utils import (
+from app.utils.utils import (
     new_template,
     new_chain,
     get_prompt,

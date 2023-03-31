@@ -1,6 +1,6 @@
 import pytest
-from models.tokenizer import Tokenizer
-from models.speech_synthesis import SpeechSynthesis
+from app.models.tokenizer import Tokenizer
+from app.models.speech_synthesis import SpeechSynthesis
 
 pytest.main()
 

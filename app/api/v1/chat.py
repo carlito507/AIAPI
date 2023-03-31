@@ -6,8 +6,11 @@ from pydantic import BaseModel
 from typing import List
 from openai import ChatCompletion
 import pickle
-from models.tokenizer import Tokenizer
-from models.openai_engines import TEXT_MODELS, CODE_MODELS, DOCUMENTS_MODELS, CHAT_MODELS
+from app.models.tokenizer import Tokenizer
+from app.models.openai_engines import TEXT_MODELS, CODE_MODELS, DOCUMENTS_MODELS, CHAT_MODELS
+import logging
+
+logger = logging.getLogger(__name__)
 
 # Create a router
 chat_router = APIRouter()

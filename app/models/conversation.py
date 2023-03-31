@@ -1,6 +1,8 @@
 from datetime import datetime
 from typing import List, Dict, Optional
 from uuid import uuid4
+from app.core.database import db_conversations
+from app.models.exceptions import CustomNotFoundException
 
 
 class Message:
@@ -58,7 +60,7 @@ class Conversation:
 
         exists = db_conversations.find_one({"name": name})
         if exists is None:
-            raise HTTPException(status_code=404, detail=f"Conversation {name} does not exist.")
+            raise CustomNotFoundException(f"Conversation {name} does not exist.")
 
         self.name = exists["name"]
         self.created = exists["timestamp"]
@@ -71,7 +73,8 @@ class Conversation:
         exists = db_conversations.find_one({"name": name})
 
         if exists is None:
-            raise HTTPException(status_code=404, detail=f"Conversation {name} does not exist.")
+            raise CustomNotFoundException(f"Conversation {name} does not exist.")
 
         db_conversations.delete_one({"name": name})
         return f"{name} deleted."
+

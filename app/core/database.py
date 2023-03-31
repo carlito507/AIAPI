@@ -1,5 +1,4 @@
 from pymongo import MongoClient
-from datetime import datetime
 from config import MONGODB_URI
 
 
